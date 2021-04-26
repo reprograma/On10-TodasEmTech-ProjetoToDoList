@@ -1,5 +1,5 @@
-# :memo:todo-list-reprograma
-## Desenvolvido com Javascript Vanilla  
+# On10 - Todas em Tech  
+## :memo:todo-list-reprograma
 
 Consiste em criar uma **"lista de tarefas"** para organizar e priorizar tarefas.
 Tem como objetivo exercitar os conhecimento adquiridos em HTML, CSS, Javascript e lógica.
