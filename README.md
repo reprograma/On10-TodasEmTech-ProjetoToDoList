@@ -21,13 +21,44 @@ Tem como objetivo exercitar os conhecimento adquiridos em HTML, CSS, Javascript 
 
 --------------
 
+## Instruções para baixar o repositório
+
+1. Entre no repositório da Reprograma e "forke" o [repositorio da aula](https://github.com/reprograma/On10-TodasEmTech-ProjetoToDoList)
+
+2. Clone o repositório para a sua máquina
+
+   ```
+   git clone [link]
+   ```
+
+3. Crie uma `branch` com o seu nome
+
+   ```
+   git checkout -b "seu-nome"
+   ```
+
+4. Faça uma cópia da pasta projeto e a altere para o seu nome
+
+  ```
+    ├── README.md
+    ├── projeto
+    ├── nome-sobrenome
+    |  
+
+   ```
+4. Bora codar ;)
+
+
+--------------
+
+
 ## FASES
 - **Fase 1**
     - Adicionar itens na lista
     - Poder dar check neles
-    - Validar campo de texto para não entrar itens vazios ou somente com espaços
     - Limpar campo de texto depois que insere o item na lista
 - **Fase 2**
+    - Validar campo de texto para não entrar itens vazios ou somente com espaços
     - Poder excluir itens da lista individualmente;
 - **Fase 3**
     - Marcar todos os itens como feito
