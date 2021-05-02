@@ -144,6 +144,7 @@ button {
 }
 
 .checked {
+    background-color: yellowgreen;
     text-decoration: line-through wavy #7E77A0;
 }
 

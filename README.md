@@ -65,7 +65,7 @@ Tem como objetivo exercitar os conhecimento adquiridos em HTML, CSS, Javascript 
     - Limpar lista, excluir todos os itens da lista
 - **Fase 4**
     - Ao clicar em marcar todos, mudar texto do botão para desmarcar todos
-
+    
 
 - **Desafio extra**
     - Quando o input está vazio ou com espaços, mostre uma mensagem de erro abaixo do input ao invés de um alert
