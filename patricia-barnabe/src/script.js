@@ -22,7 +22,7 @@ const botaoMarcarTodos = document.querySelector('#todoMarcarTodos');
 
 //criar evento botão
 botao.addEventListener('click', (event) => {
-    //previne que o forumlario seja enviado ao clicar, espera processar o que precisa da função
+    //previne que o formulário seja enviado ao clicar, espera processar o que precisa da função
     event.preventDefault();
 
     const elementoLista = document.createElement('li'); 
