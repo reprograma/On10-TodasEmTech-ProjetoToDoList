@@ -16,7 +16,7 @@ const botaoLimpar = document.getElementById('todoRemoverTodos');
 // nó do botão marcar todos
 const botaoMarcarTodas = document.querySelector('#todoMarcarTodos');
 
-// criar evento botão
+// criar evento botão de adicionar elemento
 botao.addEventListener('click', (event) => {
     //previne que o formulário seja enviado ao clicar, espera processar o que precisa da função
     event.preventDefault();
@@ -25,15 +25,14 @@ botao.addEventListener('click', (event) => {
     const textoElemento = document.createElement('p');
     //adiciona uma class ao p 
     textoElemento.classList.add("texto_elemento_lista");
-
     const deletaElemento = document.createElement('span');
 
     // atribuímos o valor do input ao <p> criado a partir do clique no botão
     textoElemento.innerText = inputado.value;
+    // atribuindo um texto ao span da li
     deletaElemento.innerText = '🗑️';
-    // para excluir itens da lista, precisamos criar um elemento que represente isso, e colocar evento para remover o nó do dom
 
-
+    //verificando se o input inserido é vazio ou composto apenas por espaços
     if (textoElemento.innerText.trim() === '') {
         alert("Insira uma tarefa");
     } else {
@@ -47,34 +46,39 @@ botao.addEventListener('click', (event) => {
 
     }
 
-    //função de checar elemento individual
+    //função que checa que adiciona uma classe a cada p de cada li e, a partir disso, altera o estilo do p
     textoElemento.addEventListener("click", () => {
         textoElemento.classList.add("checked");
     });
 
-    //função de deletar elemento individual
+    //função de deletar elemento a li desejada
     deletaElemento.addEventListener("click", () => {
         listaTarefas.removeChild(elementoLista);
         // outra de forma de resolver >>> elementoLista.remove();
     });
 
 
-    //TODO função de marcar todos 
+    //função de marcar todo p 
     botaoMarcarTodas.addEventListener('click', () => {
-        // o querySelectorALl retorna um array com itens de acordo o passado como parâmetro
-        const todosParagrafos = document.querySelectorAll('.texto_elemento_lista');
+        if (botaoMarcarTodas.innerText === 'Marcar todos') {
+            const todosParagrafos = document.querySelectorAll('.texto_elemento_lista');
 
-        //console.log(todosParagrafos, "vai retornar todos os <p> encontrados");
+            todosParagrafos.forEach(item => {
+                item.classList.add("checked");
+            });
+            botaoMarcarTodas.innerText = 'Desmarcar todos';
+        } else {
+            const todosParagrafos = document.querySelectorAll('.texto_elemento_lista');
+            todosParagrafos.forEach(item => {
+                item.classList.remove("checked");
+            });
+            botaoMarcarTodas.innerText = 'Marcar todos';
+        }
 
-        todosParagrafos.forEach(paragrafo => {
-            paragrafo.classList.add("checked");
-        });
     });
 
-
-    //TODO função de limpar tudo
+    //função de limpar tudo
     botaoLimpar.addEventListener('click', () => {
-        //listaTarefas é <ul>
         listaTarefas.innerHTML = '';
     });
 
