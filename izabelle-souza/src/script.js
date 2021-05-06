@@ -1,22 +1,14 @@
-// nó do input
+/*clicar e adicionar/limpar o campo da tarefa> clicar no botao e excluir a tarefa>*/
+/*colocar input para inserir o elemento dentro>
+/*deletar a tarefa quando  clicar o botão de limpar */
 const inputado = document.querySelector('#todoInput');
-
-//nó da botao
 const botao = document.getElementById('todoSubmit');
-
-//nó da ul
 const listaTarefas = document.getElementById('todoLista');
-
-//nó do formulário
 const formulario = document.getElementById('todoForm');
-
-//nó do botão limpar 
 const botaoLimpar = document.getElementById('todoRemoverTodos');
-
-// nó do botão marcar todos
 const botaoMarcarTodas = document.querySelector('#todoMarcarTodos');
 
-// criar evento botão
+//criar evento addEvenListener para adicionar botão//
 botao.addEventListener('click', (event) => {
     //previne que o formulário seja enviado ao clicar, espera processar o que precisa da função
     event.preventDefault();
