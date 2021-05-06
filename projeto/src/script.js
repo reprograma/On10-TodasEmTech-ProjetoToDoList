@@ -17,11 +17,6 @@ const botaoLimpar = document.getElementById('todoRemoverTodos');
 // nó do botão marcar todos
 const botaoMarcarTodas = document.querySelector('#todoMarcarTodos');
 
-
-// ! será apagado
-const todosOsSpans = document.querySelectorAll('span');
-console.log(todosOsSpans, "todos os spans");
-
 // criar evento botão
 botao.addEventListener('click', (event) => {
     //previne que o formulário seja enviado ao clicar, espera processar o que precisa da função
@@ -35,7 +30,6 @@ botao.addEventListener('click', (event) => {
     textoElemento.innerText = inputado.value;
     deletaElemento.innerText = '🧨';
     // para excluir itens da lista, precisamos criar um elemento que represente isso, e colocar evento para remover o nó do dom
-
 
     if (textoElemento.innerText.trim() === '') {
         alert("Insira uma tarefa");
@@ -61,19 +55,30 @@ botao.addEventListener('click', (event) => {
         // outra de forma de resolver >>> elementoLista.remove();
     });
 
+    //? FASE 4 ATÉ 21H
 
-    //TODO função de marcar todos 
+    // //TODO função de marcar todos 
     botaoMarcarTodas.addEventListener('click', () => {
         // o querySelectorALl retorna um array com itens de acordo o passado como parâmetro
-        const todosParagrafos = document.querySelectorAll('p');
 
-        console.log(todosParagrafos, "vai retornar todos os <p> encontrados");
 
-        todosParagrafos.forEach(item => {
-            item.classList.add("checked");
-        });
+        if (botaoMarcarTodas.innerText === 'Marcar todos') {
+            const todosParagrafos = document.querySelectorAll('p');
+            console.log(todosParagrafos, "vai retornar todos os <p> encontrados");
+
+            todosParagrafos.forEach(item => {
+                item.classList.add("checked");
+            });
+            botaoMarcarTodas.innerText = 'Desmarcar todos';
+        } else {
+            const todosParagrafos = document.querySelectorAll('p');
+            todosParagrafos.forEach(item => {
+                item.classList.remove("checked");
+            });
+            botaoMarcarTodas.innerText = 'Marcar todos';
+        }
+
     });
-
 
     //TODO função de limpar
     botaoLimpar.addEventListener('click', () => {
@@ -90,14 +95,4 @@ botao.addEventListener('click', (event) => {
         <p>texto</p>
     </li>
 </ul>;; */}
-
-
-
-
-    //criar <li>
-    // criar <p>
-    //pegar o value do input
-
-    // colocar o li criado como um filho da ul (appendChild, lembram?)
-    // colocar o valor do input no p criado e adicionar como filho no li
 
