@@ -62,11 +62,22 @@ botao.addEventListener('click', (event) => {
     //função de marcar todos
     botaoMarcarTodos.addEventListener('click', () => {
         //o querySelectorALl retorna um array com itens de acordo com o que foi passado como parâmetro
-        const todosParagrafos = document.querySelectorAll('p');
         
-        todosParagrafos.forEach(paragrafo => {
-            paragrafo.classList.add('checked')
-        })
+        if (botaoMarcarTodos.innerText === 'Marcar Todos') {
+            const todosParagrafos = document.querySelectorAll('p');
+
+            todosParagrafos.forEach(paragrafo => {
+                paragrafo.classList.add('checked');
+            });
+            botaoMarcarTodos.innerText = 'Desmarcar Todos';
+        } else {
+            const todosParagrafos = document.querySelectorAll('p');
+
+            todosParagrafos.forEach(paragrafo => {
+                paragrafo.classList.remove('checked')
+            });
+            botaoMarcarTodos.innerText = 'Marcar Todos';
+        }
     
     })
 
