@@ -61,14 +61,27 @@ botao.addEventListener('click', (event) => {
     // utilizar um forEach para acrescentar uma classe em cada um
 
     botaoMarcarTodos.addEventListener('click', () => {
-        // o querySelectorAll retorna um array com itens de acordo passado como parâmetro
-        const todosParagrafos = document.querySelectorAll('p');
+     // o querySelectorALl retorna um array com itens de acordo o passado como parâmetro
+        if(botaoMarcarTodos.innerHTML === 'Marcar todos') {
+           
+            const todosParagrafos = document.querySelectorAll('p');
+    
+            todosParagrafos.forEach(item => {
+                item.classList.add("checked");
+            });
+            
+            botaoMarcarTodos.innerHTML = 'Desmarcar todos';
 
-        todosParagrafos.forEach(paragrafo =>{
-            paragrafo.classList.add("checked");
-        });
+        } else {
+            
+            const todosParagrafos = document.querySelectorAll('p');
+    
+            todosParagrafos.forEach(item => {
+                item.classList.remove("checked");
+            });
+            botaoMarcarTodos.innerHTML = 'Marcar todos'
+        }
 
-        // textoElemento.classList.add("checked");
     });
 
     // função de limpar
