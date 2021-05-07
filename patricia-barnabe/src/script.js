@@ -16,22 +16,22 @@ const botaoLimpar = document.getElementById('todoRemoverTodos');
 //nó do botão marcar todos
 const botaoMarcarTodos = document.querySelector('#todoMarcarTodos');
 
-/* ! será apagado
-   const todosOsSpans = document.querySelectorAll('span');
-   console.log(todosOsSpans, "todos os spans"); */
+//nó dos samples
+const samples = document.querySelector('.sample');
 
 //criar evento botão
 botao.addEventListener('click', (event) => {
     //previne que o formulário seja enviado ao clicar, espera processar o que precisa da função
     event.preventDefault();
 
+    //criando variáveis para receber os valores dos elementos criados 
     const elementoLista = document.createElement('li'); 
     const textoElemento = document.createElement('p');
     const deletaElemento = document.createElement('span');
 
-    //atribuimos o valor do input ao <p> criando aa partir do clique no botão
+    //atribuimos o valor do input ao <p> criando a partir do clique no botão
     textoElemento.innerText = inputado.value;
-    deletaElemento.innerText = '🗑';
+    deletaElemento.innerText = '❌';
 
     /*FASE 02 
     1º: o código abaixo só deve ocorrer se o input não estiver vazio, caso esteja vazio, precisamos mostrar o alert para o usiário
@@ -46,17 +46,21 @@ botao.addEventListener('click', (event) => {
 
         //pegamos o nó do formulário e utilizamos um método para limpar o input
         formulario.reset();
+        //FASE BÔNUS: pegamos o nó do sample e utilizamos um método para remover as divs do sample quando algo for inserido na lista
+        samples.remove();
     }
 
     //função de checar
     textoElemento.addEventListener('click', () => {
+        //classList.add adiciona ao elemento a classe passada como parâmetro 
         textoElemento.classList.add('checked');
     })
 
     //função de deletar
     deletaElemento.addEventListener('click', () => {
         listaTarefas.removeChild(elementoLista)
-        //para exlucir todos os elementos de uma vez: listaTarefas.remove();
+        //outra alternativa: elementoLista.remove()
+        //para excluir todos os elementos de uma vez: listaTarefas.remove();
     })
 
     //função de marcar todos
@@ -66,16 +70,20 @@ botao.addEventListener('click', (event) => {
         if (botaoMarcarTodos.innerText === 'Marcar Todos') {
             const todosParagrafos = document.querySelectorAll('p');
 
+            //percorre cada item do array e adiciona a classe "checked" a cada um dos itens
             todosParagrafos.forEach(paragrafo => {
                 paragrafo.classList.add('checked');
             });
+            //muda o texto do botão
             botaoMarcarTodos.innerText = 'Desmarcar Todos';
         } else {
             const todosParagrafos = document.querySelectorAll('p');
 
+            //percorre cada item do array e remove a classe "checked" de cada um dos itens
             todosParagrafos.forEach(paragrafo => {
                 paragrafo.classList.remove('checked')
             });
+            //muda o texto do botão
             botaoMarcarTodos.innerText = 'Marcar Todos';
         }
     
