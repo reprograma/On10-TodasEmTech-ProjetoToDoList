@@ -21,6 +21,7 @@ function addToDo() {
   const remove = document.createElement("img");
 
   // alterando atributos dos ícones
+  newToDoText.classList.add("newToDoText");
   containerIcons.classList.add("container-icons");
   check.src = "./assets/checked-off.svg";
   check.classList.add("check");
@@ -65,15 +66,23 @@ function addToDo() {
 
   // função marcar todos
   selectAll.addEventListener("click", () => {
-    if (check.getAttribute("src") == "./assets/checked-off.svg") {
-      check.src = "./assets/checked-on.svg";
-      newToDoText.classList.add("checked");
+    let getAllToDo = document.querySelectorAll(".newToDoText");
+    let getAllCheckIcon = document.querySelectorAll(".check");
+
+    if (
+      selectAll.innerText === "Marcar todos" ||
+      getAllCheckIcon.src == "./assets/checked-off.svg"
+    ) {
+      getAllToDo.forEach((p) => p.classList.add("checked"));
+      getAllCheckIcon.forEach((img) => (img.src = "./assets/checked-on.svg"));
       selectAll.innerText = "Desmarcar todos";
-    } else {
-      check.src = "./assets/checked-off.svg";
-      newToDoText.classList.remove("checked");
-      selectAll.innerText = "Marcar Todos";
+    } else if (selectAll.innerText === "Desmarcar todos") {
+      getAllToDo.forEach((p) => p.classList.remove("checked"));
+      getAllCheckIcon.forEach((img) => (img.src = "./assets/checked-off.svg"));
+      selectAll.innerText = "Marcar todos";
     }
+
+    console.log(getAllToDo);
   });
 
   // função limpar lista
