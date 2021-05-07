@@ -96,7 +96,7 @@ button {
   padding: 24px;
   height: 60px;
   background-color: #e6eec6;
-  border-radius: 24px;
+  border-radius: 8px;
   border: 0px;
   outline: none;
   margin-right: 3%;
@@ -104,7 +104,7 @@ button {
 
 .todo-form__input:focus {
   outline: none;
-  border: solid 3px purple;
+  border: solid 1px purple;
 }
 
 .todo-form__btn {
