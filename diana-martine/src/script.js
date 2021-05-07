@@ -81,8 +81,6 @@ function addToDo() {
       getAllCheckIcon.forEach((img) => (img.src = "./assets/checked-off.svg"));
       selectAll.innerText = "Marcar todos";
     }
-
-    console.log(getAllToDo);
   });
 
   // função limpar lista
