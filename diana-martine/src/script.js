@@ -63,30 +63,28 @@ function addToDo() {
       toDoList.removeChild(newToDo);
     });
 
-    // função marcar todos
-    selectAll.addEventListener("click", () => {
-      let getAllToDo = document.querySelectorAll(".newToDoText");
-      let getAllCheckIcon = document.querySelectorAll(".check");
-
-      if (
-        selectAll.innerText === "Marcar todos" ||
-        getAllCheckIcon.src == "./assets/checked-off.svg"
-      ) {
-        getAllToDo.forEach((p) => p.classList.add("checked"));
-        getAllCheckIcon.forEach((img) => (img.src = "./assets/checked-on.svg"));
-        selectAll.innerText = "Desmarcar todos";
-      } else if (selectAll.innerText === "Desmarcar todos") {
-        getAllToDo.forEach((p) => p.classList.remove("checked"));
-        getAllCheckIcon.forEach(
-          (img) => (img.src = "./assets/checked-off.svg")
-        );
-        selectAll.innerText = "Marcar todos";
-      }
-    });
-
     // função limpar lista
     clearAll.addEventListener("click", () => {
       newToDo.remove();
     });
   }
 }
+
+// função marcar todos
+selectAll.addEventListener("click", () => {
+  let getAllToDo = document.querySelectorAll(".newToDoText");
+  let getAllCheckIcon = document.querySelectorAll(".check");
+
+  if (
+    selectAll.innerText === "Marcar todos" ||
+    getAllCheckIcon.src == "./assets/checked-off.svg"
+  ) {
+    getAllToDo.forEach((p) => p.classList.add("checked"));
+    getAllCheckIcon.forEach((img) => (img.src = "./assets/checked-on.svg"));
+    selectAll.innerText = "Desmarcar todos";
+  } else if (selectAll.innerText === "Desmarcar todos") {
+    getAllToDo.forEach((p) => p.classList.remove("checked"));
+    getAllCheckIcon.forEach((img) => (img.src = "./assets/checked-off.svg"));
+    selectAll.innerText = "Marcar todos";
+  }
+});
