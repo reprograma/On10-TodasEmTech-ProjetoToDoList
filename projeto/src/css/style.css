@@ -145,6 +145,7 @@ button {
 
 .checked {
     text-decoration: line-through wavy #7E77A0;
+    background-color: #B0CF30;
 }
 
 .todo__tudo-feito:hover {
