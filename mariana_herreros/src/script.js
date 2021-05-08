@@ -47,13 +47,15 @@ botao.addEventListener('click', (event) => {
 
     textoElemento.innerText = inputado.value;
     deletaElemento.innerText = '✔';
-
-
+// para excluir itens da lista, precisamos criar um elemento que represente isso, e colocar o evento para remover o nó do dom
 
     if (textoElemento.innerText.trim() === '') {
         alert("Insira uma tarefa");
     } else {
     }
+    
+    //Quando o input está vazio ou com espaços, mostra uma mensagem de erro através de um alert
+
 
     //pegamos o nó mãe, e acrescentamos o elemento filho com o append
     listaTarefas.appendChild(elementoLista);
@@ -86,18 +88,32 @@ botao.addEventListener('click', (event) => {
 
     });
 
-    //função de marcar todos
+    //FASE 4 - Ao clicar em marcar todos, mudar texto do botão para desmarcar todos
 
-      //TODO função de marcar todos 
-      botaoMarcarTodas.addEventListener('click', () => {
+
+    //TODO função de marcar todos 
+    botaoMarcarTodas.addEventListener('click', () => {
         // o querySelectorALl retorna um array com itens de acordo o passado como parâmetro
-        const todosParagrafos = document.querySelectorAll('p');
+        let todosParagrafos = document.querySelectorAll('p');
 
-        console.log(todosParagrafos, "vai retornar todos os <p> encontrados");
+        if (botaoMarcarTodas.innerText === 'Marcar todos') {
 
-        todosParagrafos.forEach(item => {
-            item.classList.add("checked");
-        });
+        
+
+            console.log(todosParagrafos, "vai retornar todos os <p> encontrados");
+
+            todosParagrafos.forEach(item => {
+                item.classList.add("checked");
+            });
+            botaoMarcarTodas.innerText = 'Desmarcar todos';
+        } else {
+            
+
+            todosParagrafos.forEach(item => {
+                item.classList.remove("checked");
+            });
+            botaoMarcarTodas.innerText = 'Marcar todos';
+        }
     });
 
 
@@ -105,15 +121,16 @@ botao.addEventListener('click', (event) => {
     //função de limpar lista 
 
     //botaoLimpar.addEventListener(('click')
-       // , () => {
-       //     alert("clicou botão em limpar");
-        //});
+    // , () => {
+    //     alert("clicou botão em limpar");
+    //});
 
-botaoLimpar.addEventListener('click',() => {
-    //listaTarefas é <ul>
-    listaTarefas.innerHTML= "";
-});
-     
+    botaoLimpar.addEventListener('click', () => {
+        //listaTarefas é <ul>
+        listaTarefas.innerHTML = "";
+    });
 
+    
+  //Desafio extra: Quando o input está vazio ou com espaços, mostra uma mensagem de erro abaixo do input ao invés de um alert?
 
 });
