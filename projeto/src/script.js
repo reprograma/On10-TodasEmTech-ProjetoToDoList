@@ -31,6 +31,7 @@ botao.addEventListener('click', (event) => {
     deletaElemento.innerText = '🧨';
     // para excluir itens da lista, precisamos criar um elemento que represente isso, e colocar evento para remover o nó do dom
 
+
     if (textoElemento.innerText.trim() === '') {
         alert("Insira uma tarefa");
     } else {
@@ -55,32 +56,11 @@ botao.addEventListener('click', (event) => {
         // outra de forma de resolver >>> elementoLista.remove();
     });
 
-    //? FASE 4 ATÉ 21H
 
-    // //TODO função de marcar todos 
-    botaoMarcarTodas.addEventListener('click', () => {
-        // o querySelectorALl retorna um array com itens de acordo o passado como parâmetro
+    //função de marcar todos  -- para resolver o conflito da aula foi passada a função e criada na linha 71
+    botaoMarcarTodas.addEventListener('click', marcarTodas);
 
-
-        if (botaoMarcarTodas.innerText === 'Marcar todos') {
-            const todosParagrafos = document.querySelectorAll('p');
-            console.log(todosParagrafos, "vai retornar todos os <p> encontrados");
-
-            todosParagrafos.forEach(item => {
-                item.classList.add("checked");
-            });
-            botaoMarcarTodas.innerText = 'Desmarcar todos';
-        } else {
-            const todosParagrafos = document.querySelectorAll('p');
-            todosParagrafos.forEach(item => {
-                item.classList.remove("checked");
-            });
-            botaoMarcarTodas.innerText = 'Marcar todos';
-        }
-
-    });
-
-    //TODO função de limpar
+    //função de limpar
     botaoLimpar.addEventListener('click', () => {
         //listaTarefas é <ul>
         listaTarefas.innerHTML = '';
@@ -88,6 +68,20 @@ botao.addEventListener('click', (event) => {
 
 });
 
+function marcarTodas() {
+    let tasksText = document.querySelectorAll('p');
+    if (botaoMarcarTodas.innerText !== 'Marcar todos') {
+        tasksText.forEach((item) => {
+            item.classList.remove('checked');
+        });
+        botaoMarcarTodas.innerText = 'Marcar todos';
+    } else {
+        tasksText.forEach((item) => {
+            item.classList.add('checked');
+        });
+        botaoMarcarTodas.innerText = 'Desmarcar todos';
+    }
+}
 
 // exemplo estrutura HTML
 {/* <ul>
