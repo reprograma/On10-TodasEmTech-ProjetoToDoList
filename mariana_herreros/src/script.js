@@ -22,7 +22,7 @@ const botaoLimpar = document.querySelector('#todoRemoverTodos');
 const formulario = document.getElementById('todoForm');
 
 
-//console.log(inputado, "inputado");
+console.log(inputado, "inputado");
 //console.log(botao, "botao");
 //console.log(listaTarefas, "lista");
 
@@ -52,7 +52,9 @@ botao.addEventListener('click', (event) => {
     if (textoElemento.innerText.trim() === '') {
         alert("Insira uma tarefa");
     } else {
-    }
+    
+
+    
     
     //Quando o input está vazio ou com espaços, mostra uma mensagem de erro através de um alert
 
@@ -65,6 +67,7 @@ botao.addEventListener('click', (event) => {
 
     //pegamos o nó do formulário e utilizamos um método para limpar o input
     formulario.reset();
+}
 
     //função checar
     textoElemento.addEventListener('click', () => {
