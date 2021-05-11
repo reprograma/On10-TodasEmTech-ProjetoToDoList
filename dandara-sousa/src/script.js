@@ -87,13 +87,40 @@ if(textoElemento.innerText.trim() === '') {
 
     //função para marcar todos
     botaoMarcarTodos.addEventListener('click', () => {
-        console.log("clicou botão de marcar")
-      });
+
+        if (botaoMarcarTodos.innerText=== 'Marcar Todos') {
+            const todosParagrafos = document.querySelectorAll('p');
+     
+            todosParagrafos.forEach(paragrafo => {
+                 paragrafo.classList.add("checked");
+     
+            });
+            
+            botaoMarcarTodos.innerText = 'Desmarcar Todos';
+        } else {
+
+            const todosParagrafos = document.querySelectorAll('p');
+     
+            todosParagrafos.forEach(paragrafo => {
+                 paragrafo.classList.remove("checked");
+     
+            });
+            
+            botaoMarcarTodos.innerText = 'Marcar Todos';
+            
+
+        }
+
+
+
+
+    });
 
 
     //função para limpar
     botaoLimpar.addEventListener('click', () => {
-       console.log("clicou botão de click")
+        listaTarefas.innerHTML = '';
+        console.log("deletar tudo")
      });
 
 });
