@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Manjari', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background-color: #9182A6;
+    box-sizing: border-box;
+}
+
+li {
+    display: flex;
+    max-width: 90%;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.flex {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+}
+
+.todo__container {
+    background-color: white;
+    text-align: center;
+    margin: 100px auto 0;
+    width: 100%;
+    max-width: 30rem;
+    padding: 0px 0px 32px 0px;
+    border-radius: 14px;
+    box-shadow: 0px 24px 80px rgba(0, 45, 37, 0.24);
+}
+
+.todo__title {
+    text-align: center;
+    margin: 40px auto 32px auto;
+    display: inline-block;
+    font-size: 24px;
+    color: #7E77A0;
+}
+
+.todo-form {
+    justify-content: center;
+    display: flex;
+}
+
+.empty {
+    position: relative;
+    animation: shake .1s linear;
+    animation-iteration-count: 3;
+}
+
+@keyframes shake {
+    0% {
+        left: -5px;
+    }
+    100% {
+        right: -5px;
+    }
+}
+
+.todo__tarefas__sample {
+    max-width: 90%;
+    background: #7e77a01a;
+    margin: 0 auto;
+    height: 60px;
+    border-radius: 24px;
+    align-items: center;
+    padding: 20px;
+    margin: 16px auto;
+}
+
+.todo__tarefas__sample-content {
+    background: #8f88b325;
+    max-width: 50%;
+    height: 20px;
+    border-radius: 14px;
+}
+
+.todo__tarefas__sample:last-child {
+    opacity: 0.60;
+}
+
+.todo-form__input {
+    width: 75%;
+    padding: 24px;
+    height: 60px;
+    background-color: #E6EEC6;
+    border-radius: 24px;
+    border: 0px;
+    outline: none;
+    margin-right: 3%;
+}
+
+.todo-form__input:focus {
+    outline: none;
+    border: solid 3px #B0CF30;
+}
+
+.todo-form__btn {
+    background-color: #7E77A0;
+    text-transform: uppercase;
+    color: white;
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    border: 0px;
+}
+
+.todo-form__btn:hover {
+    box-shadow: 0px 16px 24px rgba(126, 119, 160, 0.267);
+    width: 56px;
+    height: 56px;
+    transition: 0.3s;
+}
+
+.todo__btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo__tudo-feito {
+    border: 4px solid #B0CF30;
+    box-sizing: border-box;
+    border-radius: 24px;
+    background-color: transparent;
+    padding: 16px 20px 16px 20px;
+    margin: 16px 20px 0px 20px;
+    color: rgb(73, 73, 73);
+}
+
+.checked {
+    background-color: yellowgreen;
+    text-decoration: line-through wavy #7E77A0;
+}
+
+.todo__tudo-feito:hover {
+    background-color: #B0CF30;
+    box-shadow: 0px 16px 24px rgba(175, 207, 48, 0.205);
+    transition: 0.3s;
+}
+
+.todo__remover-todos {
+    border: 4px solid #B0CF30;
+    box-sizing: border-box;
+    border-radius: 24px;
+    background-color: #B0CF30;
+    padding: 16px 20px 16px 20px;
+    margin: 16px 20px 0px 20px;
+    color: #494949;
+}
+
+.todo__remover-todos:hover {
+    background-color: transparent;
+    box-shadow: 0px 16px 24px rgba(175, 207, 48, 0.205);
+    transition: 0.3s;
+}
+
+@media only screen and (max-width: 460px) {
+    .todo-form {
+        flex-direction: column;
+    }
+    .todo-form__input {
+        width: 90%;
+        align-self: center;
+        margin: 0 auto;
+    }
+    .todo-form__btn {
+        background-color: #7E77A0;
+        text-transform: uppercase;
+        color: white;
+        width: 90%;
+        height: 55px;
+        border-radius: 24px;
+        align-self: center;
+        margin-top: 8px;
+    }
+    .todo-form__btn:hover {
+        box-shadow: 0px 16px 24px rgba(126, 119, 160, 0.267);
+        width: 90%;
+        transition: 0.3s;
+    }
+    .todo__btn-container {
+        flex-direction: column;
+    }
+    .todo__tudo-feito {
+        width: 90%;
+    }
+    .todo__tudo-feito:hover {
+        background-color: #B0CF30;
+        box-shadow: 0px 16px 24px rgba(175, 207, 48, 0.205);
+        transition: 0.3s;
+    }
+    .todo__remover-todos {
+        background-color: transparent;
+        width: 90%;
+        margin-top: 8px;
+    }
+    .todo__tarefas {
+        margin: 32px auto 24px auto;
+    }
+}
