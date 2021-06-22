@@ -1,7 +1,7 @@
 // nó do input
 const inputado = document.querySelector('#todoInput');
 
-//nó da botao
+//nó do botao
 const botao = document.getElementById('todoSubmit');
 
 //nó da ul
